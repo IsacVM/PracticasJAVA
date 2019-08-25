@@ -127,7 +127,7 @@ public class Pract2 {
                 newlistaTokens[i++] = (String)obj; 
             } 
             //casos especiales para el nombre
-            if( (nNombre=="MARIA" || nNombre=="JUAN") && (newlistaTokens.length>3) ){
+            if( (nNombre=="JUAN" || nNombre=="MARIA") && (newlistaTokens.length>3) ){
                 nNombre=newlistaTokens[1];
             }
             //separacion en variables de ap. paterno,ap. materno y fecha
