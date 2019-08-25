@@ -13,7 +13,7 @@ class ListaNombres{
     //Metodos
     public ListaNombres(String nombre){//Metodo constructor
         nombreLista=nombre;
-        listaNombres=new ArrayList <String> ();
+        List<String> listaNombres=new ArrayList <String>();
     }
 
     public void addName(String nombre){
@@ -64,7 +64,7 @@ class ListaFechasNacimiento{
 
     public ListaFechasNacimiento(String nombreF){
         nombreListaF=nombreF;
-        listaNacimientos=new ArrayList <String> ();
+        List<String> listaNacimientos=new ArrayList <String>();
     }
 
     public void addFecha(String fecha){
@@ -79,22 +79,24 @@ class ListaFechasNacimiento{
 }
 
 
-public class Main {
+class Main {
     public static void main(String[] args){
 
-        String nlist,busca,nombre,fech;
         Scanner stdin=new Scanner(System.in);
 
-        //Creando la instancia para crear los objetos lista
-        ListaNombres nlista=new ListaNombres("ListadeNombres");
-        ListaFechasNacimiento flista=new ListaFechasNacimiento("ListadeFechas");
+        ListaNombres nlista=new ListaNombres("Lista");
+
+        ListaFechasNacimiento flista=new ListaFechasNacimiento("Lista2");
        
         //guardando datos en la lista
-        nombre=stdin.nextLine();
-        nlista.addName(nombre);
-        fech=stdin.nextLine();
-        flista.addFecha(fech);
-    
+
+        while(stdin.hasNextLine()) {
+
+            nlista.addName(stdin.nextLine());
+            flista.addFecha(stdin.nextLine());
+          
+        }
+
         /*buscar un nombre dentro de la lista
         System.out.println("Buscar nombre:")
         busca=stdin.nextLine();
