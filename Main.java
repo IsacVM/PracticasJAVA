@@ -57,11 +57,13 @@ class ListaFechasNacimiento{
 
     //Atributos
     private String fecha;
+    private String nombreListaF;
     private ArrayList <String> listaNacimientos;
 
     //Metodos
 
-    public ListaFechasNacimiento(){
+    public ListaFechasNacimiento(String nombreF){
+        nombreListaF=nombreF;
         listaNacimientos=new ArrayList <String> ();
     }
 
@@ -77,15 +79,15 @@ class ListaFechasNacimiento{
 }
 
 
-public class Pract2 {
+public class Main {
     public static void main(String[] args){
 
         String nlist,busca,nombre,fech;
         Scanner stdin=new Scanner(System.in);
 
         //Creando la instancia para crear los objetos lista
-        ListaNombres nlista=new ListaNombres("NameList");
-        ListaFechasNacimiento flista=new ListaFechasNacimiento();
+        ListaNombres nlista=new ListaNombres("ListadeNombres");
+        ListaFechasNacimiento flista=new ListaFechasNacimiento("ListadeFechas");
        
         //guardando datos en la lista
         nombre=stdin.nextLine();
@@ -94,14 +96,14 @@ public class Pract2 {
         flista.addFecha(fech);
     
         /*buscar un nombre dentro de la lista
-        System.out.println("Buscar nombre:")*/
+        System.out.println("Buscar nombre:")
         busca=stdin.nextLine();
 
         //se obtiene la posicion del nombre en la lista
         int posicion=nlista.findName(busca);
       
-        if(posicion!=-1){//si se encontro el nombre
-            String name=nlista.getName(posicion);
+        if(posicion!=-1){//si se encontro el nombre*/
+            String name=nlista.getName(0);
             //partimos el nombre completo con el metodo Split
             String[] listaTokens=name.split(" ");
             String nNombre=listaTokens[0];
@@ -133,7 +135,7 @@ public class Pract2 {
             //separacion en variables de ap. paterno,ap. materno y fecha
             String apM=newlistaTokens[newlistaTokens.length-1];
             String apP=newlistaTokens[newlistaTokens.length-2];
-            String date=flista.getFecha(posicion);
+            String date=flista.getFecha(0);
 
             //---GENRANDO EL RFC--------------------
 
@@ -166,9 +168,9 @@ public class Pract2 {
             System.out.println(rfc);
            
            
-        }else{
-            System.out.println("NO lo encontro");
-        }
+        //}else{
+            //System.out.println("NO lo encontro");
+        //}
 
     }
 }
